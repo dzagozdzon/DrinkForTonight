@@ -14,3 +14,66 @@
  *= require_self
  */
 
+ body{
+   font-family:'Arial', sans-serif;
+   font-size:14px;
+   color:#fff;
+   background:#343a40;
+   line-height:1.5em;
+ }
+
+ header{
+   background: silver;
+   color:#fff;
+   height:80px;
+   margin-bottom:20px;
+ }
+
+ footer{
+  background:silver;
+  color:#fff;
+  height:60px;
+  margin-top:20px;
+  text-align: center;
+  padding-top:20px;
+ }
+
+ .top-buffer {margin-top: 30px;}
+
+#drinks-index{
+  text-align: center;
+}
+
+#drinks-index img{
+  height: 250px;
+  width: 100%;
+  padding: 3px;
+  border: 1px #ccc solid;
+}
+
+#drinks-index h3{
+  height:60px;
+  position: relative;
+}
+
+#drinks-index .btn{
+  display: block;
+  margin-top:20px;
+}
+
+#drinks-show h2{
+  background:#f4f4f4;
+  padding:10px;
+}
+
+.drinks-show left{
+  float:left;
+  width:40%;
+}
+
+.drinks-show-right{
+  float: left;
+  width:60%;
+  margin-top:10px;
+}
+

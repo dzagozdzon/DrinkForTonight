@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Drinkfortonight</title>
+    <title><%= @page_title ? @page_title : 'Welcome' %> | Drink For Tonight </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
@@ -42,6 +42,30 @@
         </form>
       </div>
     </nav>
-    <%= yield %>
+
+    <header>
+      <div class="container">
+        <h1>Drink For Tonight <small><%= @page_title ? @page_title : 'Welcome' %></small></h1>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <%= yield %>
+          </div>
+          <div class="col-md-4">
+            <%= render 'partials/sidebar' %>
+          </div>
+        </div>  
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>Copyrigth &copy; 2018, All Rights Reserved</p>
+      </div>
+    </footer>
   </body>
 </html>

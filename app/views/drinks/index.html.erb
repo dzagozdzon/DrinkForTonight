@@ -1,2 +1,46 @@
-<h1>Drinks#index</h1>
-<p>Find me in app/views/drinks/index.html.erb</p>
+<div id="drinks-index">
+  <div class="row">
+    <div class="col-md-3 col-sm-3">
+      <h3>Mojito</h3>
+      <%= image_tag ('covers/mojito.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <h3>Apperol Spritz</h3>
+      <%= image_tag ('covers/apperolspritz.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <h3>Sangria</h3>
+      <%= image_tag ('covers/sangria.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <h3>Black Russian</h3>
+      <%= image_tag ('covers/blackrussian.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+  </div>
+  <div class="row top-buffer">
+    <div class="col-md-3 col-sm-3">
+      <h3>Piña colada</h3>
+      <%= image_tag ('covers/pinacolada.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <h3>Manhattan</h3>
+      <%= image_tag ('covers/manhattan.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <h3>Cuba Libre</h3>
+      <%= image_tag ('covers/cubalibre.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <h3>Long Island</h3>
+      <%= image_tag ('covers/longisland.jpg') %>
+      <%= link_to 'Read More', drink_path(1), class:'btn btn-primary' %>
+    </div>
+  </div>
+</div>
