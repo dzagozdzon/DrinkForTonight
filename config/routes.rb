@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'ingredients/new'
+  get 'ingredients/create'
+  get 'ingredients/update'
+  get 'ingredients/edit'
+  get 'ingredients/destroy'
+  get 'ingredients/index'
+  get 'ingredients/show'
   get 'categories/new'
   get 'categories/create'
   get 'categories/update'
@@ -22,6 +29,7 @@ Rails.application.routes.draw do
 
   resources :drinks
   resources :categories
+  resources :ingredients 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
