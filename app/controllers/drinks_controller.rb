@@ -18,5 +18,11 @@ class DrinksController < ApplicationController
 
   def index; end
 
-  def show; end
+  def show; 
+    
+  private
+    def drink_params
+      params.require(:drink).permit(:name, :category_id, :ingredient_id, :preparation)
+    end
+  end
 end
