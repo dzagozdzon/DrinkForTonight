@@ -62,7 +62,8 @@
 }
 
 #drinks-show h2{
-  background:#f4f4f4;
+  color:#fff;
+  background:#343a40;
   padding:10px;
 }
 
@@ -75,5 +76,12 @@
   float: left;
   width:60%;
   margin-top:10px;
+}
+
+#drinks-show img{
+  height: 100%;
+  width: 300px;
+  padding: 3px;
+  border: 1px #ccc solid;
 }
 

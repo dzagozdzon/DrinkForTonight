@@ -1,5 +1,7 @@
 class IngredientsController < ApplicationController
   def new
+    @page_title = "Add New Ingredient"
+    @ingredient = Ingredient.new
   end
 
   def create

@@ -1,2 +1,20 @@
-<h1>Drinks#show</h1>
-<p>Find me in app/views/drinks/show.html.erb</p>
+
+<div id="drinks-show">
+  <h2>Mojito</h2>
+  <div class="drinks-show-left">
+    <%= image_tag('covers/mojito.jpg') %>
+  </div>
+  <div class="drinks-show-right">
+    <h3><strong>Primary alcohol: </strong><%= link_to "Rum", categories_path(1), class: 'btn btn-success', target: '_blank' %></h3>
+    <h3>Ingredients:</h3>
+      <ul>
+        <li>4 cl white rum</li>
+        <li>3 cl fresh lime juice</li>
+        <li>6 sprigs of mint</li>
+        <li>2 teaspoons sugar (or 2 cl of sugar syrup)</li>
+        <li>soda water</li>
+      </ul>
+    <h3>Preparation:</h3>
+      <p>	Muddle mint leaves with sugar and lime juice. Add a splash of soda water and fill the glass with cracked ice. Pour the rum and top with soda water. Garnish with sprig of mint leaves and lemon slice. Serve with straw.</p>
+  </div>
+</div>

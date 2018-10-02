@@ -1,2 +1,12 @@
-<h1>Ingredients#new</h1>
-<p>Find me in app/views/ingredients/new.html.erb</p>
+<h2> Add New Ingredient</h2>
+
+<%= form_for @ingredient %>
+  <div class="form-group">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class:'form-control' %><br />
+  </div>
+
+  <%= f.submit "Submit", class:'btn btn-primary' %>
+  <%= link_to "Cancel", ingredients_path, class:'btn btn-default' %>
+  
+<% end %>

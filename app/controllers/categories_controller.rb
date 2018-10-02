@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  def new; end
+  def new
+    @page_title = "Add New Primary Alcohol"
+    @category = Category.new
+  end
 
   def create; end
 
