@@ -17,11 +17,29 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    @category = Category.find(params[:id])
 
-  def edit; end
+    @category.update(category_params)
 
-  def destroy; end
+    flash[:notice] = 'Category Updated'
+
+    redirect_to categories_path
+  end
+
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+
+    @category.destroy
+
+    flash[:notice] = 'Category Removed'
+
+    redirect_to categories_path
+  end
 
   def index
     @categories = Category.all

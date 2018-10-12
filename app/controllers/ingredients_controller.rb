@@ -17,15 +17,33 @@ class IngredientsController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    @ingredient = Ingredient.find(params[:id])
 
-  def edit; end
+    @ingredient.update(ingredient_params)
 
-  def destroy; end
+    flash[:notice] = 'Ingredient Updated'
 
-  def index; end
+    redirect_to ingredient_path
+  end
 
-  def show; end
+  def edit
+    @ingredient = Ingredient.find(params[:id])
+  end
+
+  def destroy
+    @ingredient = Ingredient.find(params[:id])
+
+    @ingredient.destroy
+
+    flash[:notice] = 'Ingredient Removed'
+
+    redirect_to ingredients_path
+  end
+
+  def index
+    @ingredients = Ingredient.all
+  end
 
   private
 

@@ -37,6 +37,14 @@
               <a class="dropdown-item" <%= link_to 'Ingredient', new_ingredient_path %></a>
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown03">
+              <a class="dropdown-item" <%= link_to 'Drink', drinks_path %></a>
+              <a class="dropdown-item" <%= link_to 'Primary Alcohol', categories_path %></a>
+              <a class="dropdown-item" <%= link_to 'Ingredient', ingredients_path %></a>
+            </div>
+          </li>
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control" type="text" placeholder="Search">

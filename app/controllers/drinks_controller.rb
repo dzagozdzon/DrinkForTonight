@@ -39,7 +39,7 @@ class DrinksController < ApplicationController
   def destroy
     @drink = Drink.find(params[:id])
 
-    @book.destroy
+    @drink.destroy
 
     flash[:notice] = 'Drink Removed'
 
