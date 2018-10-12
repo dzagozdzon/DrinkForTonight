@@ -23,9 +23,15 @@ class CategoriesController < ApplicationController
 
   def destroy; end
 
-  def index; end
+  def index
+    @categories = Category.all
+  end
 
-  def show; end
+  def show
+    @category = Category.find(params[:id])
+    @categories = Category.all
+    @drinks = @category.drinks
+  end
 
   private
 

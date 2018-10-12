@@ -12,9 +12,8 @@
 
 <% if params[:controller] == 'drinks' && params[:action] == 'index' || params[:action] == 'show' %>
 <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action">Whisk(e)y</a>
-  <a href="#" class="list-group-item list-group-item-action">Vodka</a>
-  <a href="#" class="list-group-item list-group-item-action">Wine</a>
-  <a href="#" class="list-group-item list-group-item-action">Rum</a>
+    <% @categories.each do |category| %>
+      <%= link_to category.name, category_path(category.id), class:'list-group-item' %>
+    <% end %>
 </div>
 <% end %>

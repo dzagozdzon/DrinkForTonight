@@ -1,2 +1,14 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h2><%= @category.name %></h2>
+<div id="drinks-index">
+  <% @drinks.each_slice(4) do |drink| %>
+    <div class="row">
+      <% drink.each do |drink| %>
+        <div class="col-md-3 col-sm-3">
+        <h3><%= drink.name %></h3>
+        <%= image_tag (drink.coverpath) %>
+        <%= link_to 'Read More', drink_path(drink), class:'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -22,17 +22,39 @@ class DrinksController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    @drink = Drink.find(params[:id])
 
-  def edit; end
+    @book.update(book_params)
 
-  def destroy; end
+    flash[:notice] = 'Drink Updated'
+
+    redirect_to drinks_path
+  end
+
+  def edit
+    @drink = Drink.find(params[:id])
+  end
+
+  def destroy
+    @drink = Drink.find(params[:id])
+
+    @book.destroy
+
+    flash[:notice] = 'Drink Removed'
+
+    redirect_to drinks_path
+  end
 
   def index
     @drinks = Drink.all
+    @categories = Category.all
   end
 
   def show
+    @drink = Drink.find(params[:id])
+    @categories = Category.all
+    @ingredients = Ingredient.all
   end
 
   private
