@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_152800) do
+ActiveRecord::Schema.define(version: 2018_10_11_224934) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
@@ -25,15 +25,12 @@ ActiveRecord::Schema.define(version: 2018_10_02_152800) do
     t.text "preparation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "coverpath"
   end
 
-  create_table "drinks_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.bigint "ingredient_id"
-    t.bigint "drink_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["drink_id"], name: "index_drinks_ingredients_on_drink_id"
-    t.index ["ingredient_id"], name: "index_drinks_ingredients_on_ingredient_id"
+  create_table "drinks_ingredients", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.integer "drink_id"
+    t.integer "ingredient_id"
   end
 
   create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -42,6 +39,4 @@ ActiveRecord::Schema.define(version: 2018_10_02_152800) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "drinks_ingredients", "drinks"
-  add_foreign_key "drinks_ingredients", "ingredients"
 end
