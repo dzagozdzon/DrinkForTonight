@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
 class DrinksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def new
     @page_title = 'Add Drink'
-    @drink = Drink.new
-    @category = Category.new
-    @ingredient = Ingredient.new
-    @ingredients = Ingredient.all
+    @drink = current_user.drinks.build
+    #@category = current_user.categories.build
+    #@ingredient = current_user.ingredients.build
   end
 
   def create
-    @drink = Drink.new(drink_params)
+    @drink = current_user.drinks.build(drink_params)
     if @drink.save
       @drink.ingredients << Ingredient.where(id: params[:id])
 
@@ -23,9 +24,9 @@ class DrinksController < ApplicationController
   end
 
   def update
-    @drink = Drink.find(params[:id])
+    @drink = current_user.drinks.find(params[:id])
 
-    @book.update(book_params)
+    @drink.update(drink_params)
 
     flash[:notice] = 'Drink Updated'
 
@@ -33,11 +34,11 @@ class DrinksController < ApplicationController
   end
 
   def edit
-    @drink = Drink.find(params[:id])
+    @drink = current_user.drinks.find(params[:id])
   end
 
   def destroy
-    @drink = Drink.find(params[:id])
+    @drink = current_user.drinks.find(params[:id])
 
     @drink.destroy
 

@@ -16,6 +16,7 @@
       </li>
   </div>
   <div class="clearfix"></div>
-  <h3>Admin functions</h3>
+  <% if user_signed_in? %>
   <%= link_to 'Edit', edit_drink_path(@drink.id) %> | <%= link_to 'Delete', drink_path(@drink), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <% end %>
 </div>
