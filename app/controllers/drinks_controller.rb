@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class DrinksController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def new
     @page_title = 'Add Drink'
     @drink = current_user.drinks.build
-    #@category = current_user.categories.build
-    #@ingredient = current_user.ingredients.build
+    @ingredients = Ingredient.all
+
+    # @category = current_user.categories.build
+    # @ingredient = current_user.ingredients.build
   end
 
   def create
@@ -56,6 +58,20 @@ class DrinksController < ApplicationController
     @drink = Drink.find(params[:id])
     @categories = Category.all
     @ingredients = Ingredient.all
+  end
+
+  def find_drink
+    @drink = Drink.new
+    @ingredients = Ingredient.all
+  end
+
+  def match_drinks
+    params_ingredient_ids = drink_params['ingredient_ids']
+    @drinks = Drink.select do |drink|
+      (drink.ingredient_ids & params_ingredient_ids.map(&:to_i)).any?
+    end
+    # @sorted_drinks = @drinks.sort { |drink| (drink.ingredient_ids & params_ingredient_ids.map(&:to_i)).length }
+    @categories = Category.all
   end
 
   private

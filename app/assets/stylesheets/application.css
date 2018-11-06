@@ -12,7 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= stub "active_admin"
  */
+
 
  body{
    font-family:'Arial', sans-serif;

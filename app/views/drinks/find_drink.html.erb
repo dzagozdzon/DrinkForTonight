@@ -1,0 +1,23 @@
+<h2>Select the ingredients that you have</h2>
+
+<%= form_for(@drink, url: match_drinks_path) do |f| %>
+  <!-- Check for errors -->
+  <% if @drink.errors.any? %>
+    <% @drink.errors.full_messages.each do |msg| %>
+      <!-- Show errors -->
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+
+  <div class="form-group", id='add_ingredients'>
+    <%= f.label :ingredient %><br />
+    <% Ingredient.all.each do |ingredient| %>
+      <%= check_box_tag "drink[ingredient_ids][]", ingredient.id %>
+      <%= ingredient.name %>
+    <% end %>
+  </div>
+
+  <%= f.submit "Submit", class:'btn btn-primary' %>
+  <%= link_to "Cancel", drinks_path, class:'btn btn-default' %>
+
+<% end %>
