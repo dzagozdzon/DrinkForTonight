@@ -1,7 +1,7 @@
 <div id="drinks-show">
   <h2><%= @drink.name %></h2>
   <div class="drinks-show-left">
-    <%= image_tag(@drink.coverpath) %>
+    <%= image_tag @drink.image.url %>
   </div>
   <div class="drinks-show-right">
     <h3><strong>Primary alcohol: </strong><%= @drink.category.name %></h3>
