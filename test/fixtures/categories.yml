@@ -1,0 +1,14 @@
+rum:
+  name: Rum
+
+vodka: 
+  name: Vodka
+
+tequila: 
+  name: Tequila
+
+whisk(e)y:
+  name: Whisk(e)y
+
+wine:
+  name: Wine
