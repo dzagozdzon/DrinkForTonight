@@ -51,6 +51,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rspec-activemodel-mocks'
 end
 
 group :development do
@@ -68,6 +70,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'guard-rspec'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
 end
 
 group :production do

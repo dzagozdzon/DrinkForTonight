@@ -3,5 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe 'ingredients/new.html.erb', type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'renders form' do
+    assign(:ingredient, Ingredient.create(name: 'sth'))
+
+    render
+
+    expect(rendered).to match(/<form/)
+  end
 end

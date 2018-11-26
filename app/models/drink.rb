@@ -7,4 +7,5 @@ class Drink < ApplicationRecord
   accepts_nested_attributes_for :ingredients
   has_attached_file :image, styles: { large: 'x250' }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates :name, presence: true
 end

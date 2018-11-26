@@ -6,4 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :drinks
+  validates :password, presence: true,
+                       length: { minimum: 5 }
 end
