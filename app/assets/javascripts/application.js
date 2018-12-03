@@ -17,4 +17,17 @@
 //= require turbolinks
 //= require_tree .
 
-
+$( function() {
+  $ ( "show-option" ).tooltip({
+    show: {
+      effect: "slideDown",
+      delay: 250
+    }
+  })
+  $ ( "hide-option" ).tooltip({
+    hide: {
+      effect: "explode",
+      delay: 250
+    }
+  })
+})

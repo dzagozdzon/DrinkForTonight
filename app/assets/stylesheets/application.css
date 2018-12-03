@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= stub "active_admin"
+ *= require font-awesome
  */
 
 
@@ -26,14 +27,21 @@
 
  header{
    background: silver;
-   color:#fff;
+   color:#343a40;
    height:80px;
    margin-bottom:20px;
+   text-align: justify;
+   position: relative;
+ }
+
+ #header-content{
+   position: absolute;
+   bottom: 0;
  }
 
  footer{
   background:silver;
-  color:#fff;
+  color:#343a40;
   height:60px;
   margin-top:20px;
   text-align: center;

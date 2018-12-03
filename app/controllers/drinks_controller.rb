@@ -61,16 +61,18 @@ class DrinksController < ApplicationController
   end
 
   def find_drink
+    @page_title = 'Find Drink!'
     @drink = Drink.new
     @ingredients = Ingredient.all
   end
 
   def match_drinks
+    @page_title = 'Matched Drinks'
     params_ingredient_ids = drink_params['ingredient_ids']
     @drinks = Drink.select do |drink|
       (drink.ingredient_ids & params_ingredient_ids.map(&:to_i)).any?
     end
-    # @sorted_drinks = @drinks.sort { |drink| (drink.ingredient_ids & params_ingredient_ids.map(&:to_i)).length }
+    @sorted_drinks = @drinks.sort { |drink| (drink.ingredient_ids & params_ingredient_ids.map(&:to_i)).length }
     @categories = Category.all
   end
 

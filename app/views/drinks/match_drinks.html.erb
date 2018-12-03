@@ -1,5 +1,5 @@
 <div id="drinks-index">
-  <% @drinks.each_slice(4) do |drink| %>
+  <% @sorted_drinks.each_slice(4) do |drink| %>
     <div class="row">
       <% drink.each do |drink| %>
         <div class="col-md-3 col-sm-3">

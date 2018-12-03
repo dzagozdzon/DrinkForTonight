@@ -1,4 +1,5 @@
-<h2>Select the ingredients that you have</h2>
+<h2><i class="fas fa-cocktail"></i>
+Select the ingredients that you have</h2>
 
 <%= form_for(@drink, url: match_drinks_path) do |f| %>
   <!-- Check for errors -->
@@ -10,7 +11,7 @@
   <% end %>
 
   <div class="form-group", id='add_ingredients'>
-    <%= f.label :ingredient %><br />
+    <% f.label :ingredient %><br />
     <% Ingredient.all.each do |ingredient| %>
       <%= check_box_tag "drink[ingredient_ids][]", ingredient.id %>
       <%= ingredient.name %>
