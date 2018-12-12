@@ -1,6 +1,6 @@
 before_script: 
   - mysql -e 'CREATE DATABASE dft_test;'
-  - cp ./.database.yml.travis ./config/database.yml
+  - cp config/database.yml.travis config/database.yml
 
 language: ruby
 
