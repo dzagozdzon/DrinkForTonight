@@ -4,7 +4,7 @@ before_script:
   
 before_install:
   - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('dft') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
-  - sudo mysql_upgrade -u root -pdft
+  - sudo mysql_upgrade -u root -p
   - sudo service mysql restart
 
 language: ruby
