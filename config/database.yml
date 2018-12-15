@@ -23,8 +23,8 @@ test:
   <<: *default
   adapter: mysql2
   database: dft_test
-  username: dft
-  password: dft
+  username: travis
+  encoding: utf8
 
 production:
   <<: *default

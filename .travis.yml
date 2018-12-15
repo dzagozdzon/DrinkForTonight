@@ -1,0 +1,14 @@
+before_install:
+  - mysql -e 'CREATE DATABASE dft_test'
+
+language: ruby
+
+rvm: 
+  - 2.5.1
+
+script: 
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rspec 
+
+services: 
+  - mysql
