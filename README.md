@@ -1,5 +1,9 @@
 # README
 
+[![Build Status](https://travis-ci.com/dzagozdzon/DrinkForTonight.svg?branch=master)](https://travis-ci.com/dzagozdzon/DrinkForTonight)
+![](https://img.shields.io/github/license/dzagozdzon/DrinkForTonight.svg)
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
