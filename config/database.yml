@@ -27,5 +27,4 @@ test:
   encoding: utf8
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV['DATABASE_URL'] %>
